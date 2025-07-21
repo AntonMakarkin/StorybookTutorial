@@ -1,6 +1,8 @@
-import '../src/index.css'
+import type { Preview } from '@storybook/react-vite';
 
-/** @type { import('@storybook/react').Preview } */
+import '../src/index.css';
+
+/** @type { import('@storybook/react-vite').Preview } */
 const preview = {
   parameters: {
     controls: {
