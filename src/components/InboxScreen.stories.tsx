@@ -10,6 +10,13 @@ import { MockedState } from './TaskList.stories';
 
 import { Provider } from 'react-redux';
 
+import {
+    fireEvent,
+    waitFor,
+    within,
+    waitForElementToBeRemoved
+} from '@storybook/test';
+
 const meta = {
     component: InboxScreen,
     title: 'InboxScreen',
@@ -30,6 +37,13 @@ export const Default: Story = {
             ],
         },
     },
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+
+        await waitForElementToBeRemoved(await canvas.findByTestId('loading'));
+
+        
+    }
 };
 
 export const Error: Story = {
